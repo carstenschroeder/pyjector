@@ -215,7 +215,7 @@ class Pyjector(object):
         self.serial.write(data.encode())
 
     def _recv(self, size=1):
-        data = self.serial.read(size)
+        data = self.serial.read(size).decode()
         if data:
             logging.debug("_recv: " + repr(data))
         return data
